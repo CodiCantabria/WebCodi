@@ -150,6 +150,16 @@ footer img {
     height: 20px;
     fill: #202c6a;
 }
+
+.actividad-img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    /* margin: 10px auto; cambiar para alinear imagen */ 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
 /* MEDIDAS RESPONSIVE */
 @media (max-width: 768px) {
     body {
@@ -205,3 +215,4 @@ footer img {
       height: auto;
     }
   }
+  
