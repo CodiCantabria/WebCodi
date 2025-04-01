@@ -1,19 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll(".tab-btn");
     const contents = document.querySelectorAll(".content-box");
+    const contentWrapper = document.getElementById("content");
+
+    function ajustarAltura() {
+        const activo = document.querySelector(".content-box.active");
+        if (activo) {
+            requestAnimationFrame(() => {
+                const nuevaAltura = activo.scrollHeight;
+                contentWrapper.style.height = nuevaAltura + "px";
+            });
+        }
+    }
+
+    ajustarAltura(); // Arreglo de box
 
     buttons.forEach(button => {
         button.addEventListener("click", () => {
-            // Quitar clase active de todos los botones
             buttons.forEach(btn => btn.classList.remove("active"));
             button.classList.add("active");
 
-            // Mostrar el contenido correspondiente
-            const target = button.getAttribute("data-target");
             contents.forEach(content => {
                 content.classList.remove("active");
+                content.style.position = "absolute";
             });
-            document.getElementById(target).classList.add("active");
+
+            const targetContent = document.getElementById(button.getAttribute("data-target"));
+            targetContent.classList.add("active");
+            targetContent.style.position = "relative";
+
+            setTimeout(ajustarAltura, 100); 
         });
     });
+
+    window.addEventListener("resize", ajustarAltura);
 });
