@@ -54,11 +54,11 @@ body {
   }
   
   /* CAJA PRINCIPAL DE CONTENIDO */
-  #content {
+  #content {  
     position: relative;
     max-width: 900px;
     margin: 30px auto;
-    background-color: #f4f9ff;
+    background-color: #f4f9ff; 
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(32, 44, 106, 0.1);
     overflow: hidden;
@@ -69,18 +69,16 @@ body {
   
   /* CONTENIDO DENTRO DE LAS PESTAÑAS */
   .content-box {
-    position: relative;
+    position: relative; 
     z-index: 1;
+    width: 100%;
+    padding: 1px 40px 70px 40px; /* Arriba, derecha, abajo, izquierda*/
+    box-sizing: border-box;
     opacity: 0;
     transform: translateY(20px);
     pointer-events: none;
     overflow: hidden;
-    padding: 20px;
     transition: opacity 0.5s ease, transform 0.5s ease;
-    width: 100%;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
   }
   
   .content-box.active {
@@ -110,23 +108,17 @@ body {
   /* ESQUINAS DECORATIVAS */
   .decoracion-esquinas {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     z-index: 0;
     pointer-events: none;
   }
   
   .esquina {
     position: absolute;
-    width: 8vw;
-    height: 8vw;
-    max-width: 90px;
-    max-height: 90px;
-    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
     background-size: contain;
-    z-index: 0;
+    background-repeat: no-repeat;
   }
   
   .esquina-tl {
@@ -242,7 +234,7 @@ body {
     }
   
     .content-box {
-      padding: 15px;
+      padding: 20px 20px 40px 20px; /* Arriba, derecha, abajo, izquierda*/
     }
   
     .icon-line {
